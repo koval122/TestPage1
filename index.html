@@ -12,7 +12,14 @@
       var unityInstance = UnityLoader.instantiate("unityContainer", "Build/Desktop.json", {onProgress: UnityProgress});
 	window.addEventListener("resize",OnResize);
 	document.addEventListener('wheel', (event) => {
-		 unityInstance.SendMessage("ButtonHtml","Timeplay");
+		if (event.deltaY < 0)
+		{
+			 unityInstance.SendMessage("ButtonHtml","Timeplay");
+		}
+		else if (event.deltaY > 0)
+		{
+		 unityInstance.SendMessage("ButtonHtml","DownScroll");
+		}
 	});
 	document.addEventListener('touchmove', (event) => {
 		 unityInstance.SendMessage("ButtonHtml","Timeplay");
