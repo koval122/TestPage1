@@ -27,11 +27,16 @@
 	});	
 	function OnResize() 
 	{
+		if(unityInstance !=null)
+		{
 		unityInstance.SendMessage("DebugText","SetWidth",window.innerWidth);
 		unityInstance.SendMessage("DebugText","SetHeigth",window.innerHeight);
 		unityInstance.SendMessage("DebugText","OnResize");
+		}		
 	}  
-
+	  window.onscroll = function() {
+    		alert("sdasd");
+    	}
 
   </script>
 <style>
