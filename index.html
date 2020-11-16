@@ -21,15 +21,19 @@
 		{
 			 unityInstance.SendMessage("ButtonHtml","DownScroll");
 		}
+
 	});
 	document.addEventListener('touchmove', (event) => {
 		 unityInstance.SendMessage("ButtonHtml","Timeplay");
 	});	
 	function OnResize() 
 	{
+		try {
 		unityInstance.SendMessage("DebugText","SetWidth",window.innerWidth);
 		unityInstance.SendMessage("DebugText","SetHeigth",window.innerHeight);
 		unityInstance.SendMessage("DebugText","OnResize");
+		}
+		catch (e) { }
 	}  
 
 
