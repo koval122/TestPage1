@@ -30,7 +30,6 @@
 		unityInstance.SendMessage("DebugText","SetWidth",window.innerWidth);
 		unityInstance.SendMessage("DebugText","SetHeigth",window.innerHeight);
 		unityInstance.SendMessage("DebugText","OnResize");
-		document.getElementById("Scrool").scrollHeight=1000px;
 	}  
 
 
@@ -57,7 +56,7 @@
             width:100%;
             height: 100%;
 	   z-index: -10;
-	   overflow: auto;
+	   overflow:  hidden;
         }
 	 canvas,#unityContainer  {
             width:100%;
@@ -67,7 +66,7 @@
     </style>
   </head>
   <body style="margin:0; overflow:hidden;">
-<div id="Scrool" onscroll>
+<div id="Scrool">
 	<div class="webgl-content"   >	
       <div id="unityContainer" ></div></div>
 </div>
