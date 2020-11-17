@@ -11,29 +11,32 @@
     <script>
       var unityInstance = UnityLoader.instantiate("unityContainer", "Build/Desktop.json", {onProgress: UnityProgress});
 	window.addEventListener("resize",OnResize);
-	document.addEventListener('wheel', function(event)
-	{
-		if (event.deltaY < 0)
-		{
-			 unityInstance.SendMessage("ButtonHtml","UpScrool");
-		}
-		else if (event.deltaY > 0)
-		{
-			 unityInstance.SendMessage("ButtonHtml","DownScroll");
-		}
-
+	document.addEventListener('wheel', (event) => {
+		 unityInstance.SendMessage("ButtonHtml","Timeplay");
 	});
 	document.addEventListener('touchmove', (event) => {
 		 unityInstance.SendMessage("ButtonHtml","Timeplay");
 	});	
 	function OnResize() 
 	{
-		try {
 		unityInstance.SendMessage("DebugText","SetWidth",window.innerWidth);
 		unityInstance.SendMessage("DebugText","SetHeigth",window.innerHeight);
 		unityInstance.SendMessage("DebugText","OnResize");
+		var Screen=window.innerWidth/window.innerHeight;
+		
+		if(Screen<1.77) 
+		{
+		    document.getElementById("unityContainer").style.height=innerHeight+"px"; 
+		    var Widthtsmallscreen=innerHeight*1.77;
+		    document.getElementById("unityContainer").style.width = Widthtsmallscreen+"px";
+	
 		}
-		catch (e) { }
+		else
+		{
+		   document.getElementById("unityContainer").style.height=100+"%"; 
+		   document.getElementById("unityContainer").style.width = 100+"%";		
+
+		}
 	}  
 
 
@@ -49,36 +52,22 @@
             position: absolute;
 	    overflow: hidden;
         }
-	.Scrool{
-  	border: 1px solid black;
-  	width:100%;
-        height: 100%;
-	 z-index:  100;
-  	overflow: scroll;
-	}
+
          .webgl-content{
             width:100%;
             height: 100%;
-	   z-index: -10;
-	   -webkit-overflow-scrolling: auto;
+	   overflow: auto;
         }
 	 canvas,#unityContainer  {
             width:100%;
             height: 100%;
-	    -webkit-overflow-scrolling: auto;
+	    overflow: hidden;
         }
-	body
-	{
-		width:100%;
-            height: 100%;
-	}
     </style>
   </head>
-  <body >
-<div class="Scrool">
-	<div class="webgl-content"   >	
+  <body style="margin:0; overflow:hidden;">
+	<div class="webgl-content"  onscroll >	
       <div id="unityContainer" ></div></div>
-</div>
 
   </body>
 </html>
