@@ -24,19 +24,6 @@
 		unityInstance.SendMessage("DebugText","OnResize");
 		var Screen=window.innerWidth/window.innerHeight;
 		
-		if(Screen<1.77) 
-		{
-		    document.getElementById("unityContainer").style.height=innerHeight+"px"; 
-		    var Widthtsmallscreen=innerHeight*1.77;
-		    document.getElementById("unityContainer").style.width = Widthtsmallscreen+"px";
-	
-		}
-		else
-		{
-		   document.getElementById("unityContainer").style.height=100+"%"; 
-		   document.getElementById("unityContainer").style.width = 100+"%";		
-
-		}
 	}  
 
 
