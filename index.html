@@ -38,14 +38,15 @@
 
 		}
 	}  
-	try
+	function  Video() 
 	{
-		window.alert("Hello, world2222!");
-		  document.getElementById("VIDEO").onended = function() {
-  			alert("The audio has ended");
-};
-        }
-	catch (e) { }
+               window.alert("Hello, world!");
+		var vid = document.getElementById("myVideo");
+ 		vid.onended = function() {
+		unityInstance.SendMessage("VideoEnd","Videoend");
+		}
+	}
+	
 
 
 
