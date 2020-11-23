@@ -39,10 +39,10 @@
 		}
 	}  
 	var element =document.getElementById("VIDEO");
-	element.onended=function {
+	element.onended = (event) =>    {
         unityInstance.SendMessage("VideoEnd","Videoend");
+	    };
 
-    }
 
 
   </script>
