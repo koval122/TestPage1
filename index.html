@@ -38,7 +38,8 @@
 
 		}
 	}  
-	if(document.getElementById("VIDEO")!=null)
+	var element =document.getElementById("VIDEO");
+	if(element)
 	{
 		document.getElementById("VIDEO").addEventListener("ended",myHandler);
 	}
