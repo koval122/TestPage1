@@ -39,11 +39,7 @@
 		}
 	}  
 	var element =document.getElementById("VIDEO");
-	if(element)
-	{
-		document.getElementById("VIDEO").addEventListener("ended",myHandler);
-	}
-	function myHandler(e) {
+	element.onended=function {
         unityInstance.SendMessage("VideoEnd","Videoend");
 
     }
