@@ -41,9 +41,9 @@
 	try
 	{
 		window.alert("Hello, world2222!");
-		  document.getElementById("VIDEO").addEventListener("ended", (event) => {
- 			unityInstance.SendMessage("VideoEnd","Videoend");
-		});
+		  document.getElementById("VIDEO").onended = function() {
+  			alert("The audio has ended");
+};
         }
 	catch (e) { }
 
