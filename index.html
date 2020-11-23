@@ -39,9 +39,12 @@
 		}
 	}  
 	var element =document.getElementById("VIDEO");
+if(element)
+{
 	element.onended = (event) =>    {
         unityInstance.SendMessage("VideoEnd","Videoend");
 	    };
+}
 
 
 
