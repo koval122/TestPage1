@@ -41,7 +41,9 @@
 	var element =document.getElementById("VIDEO");
 if(element)
 {
+window.alert("Hello, world2222!");
 	element.onended = (event) =>    {
+        window.alert("Hello, world!");
         unityInstance.SendMessage("VideoEnd","Videoend");
 	    };
 }
