@@ -38,14 +38,14 @@
 
 		}
 	}  
-	var element =document.getElementById("VIDEO");
-if(element)
-{
-window.alert("Hello, world2222!");
-	element.onended = (event) =>    {
-        window.alert("Hello, world!");
-        unityInstance.SendMessage("VideoEnd","Videoend");
-	    };
+	try
+	{
+		window.alert("Hello, world2222!");
+		   element.addEventListener("ended", (event) => {
+ 			unityInstance.SendMessage("VideoEnd","Videoend");
+		});
+        }
+	catch (e) { }
 }
 
 
