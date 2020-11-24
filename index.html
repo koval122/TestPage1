@@ -23,7 +23,7 @@
 		unityInstance.SendMessage("DebugText","SetHeigth",window.innerHeight);
 		unityInstance.SendMessage("DebugText","OnResize");
 		var Screen=window.innerWidth/window.innerHeight;
-		   document.getElementById("unityContainer").scroll(window.innerWidth/2, window.innerHeight/2);
+		   document.getElementById("unityContainer").scroll(1920-window.innerWidth)+window.innerWidth/2, window.innerHeight/2);
 		if(Screen<1.77) 
 		{
 		    document.getElementById("unityContainer").style.height=innerHeight+"px"; 
