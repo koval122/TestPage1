@@ -19,12 +19,14 @@
 	});	
 	function OnResize() 
 	{
+		if(unityInstance)
+		{
 		unityInstance.SendMessage("DebugText","SetWidth",window.innerWidth);
 		unityInstance.SendMessage("DebugText","SetHeigth",window.innerHeight);
 		unityInstance.SendMessage("DebugText","OnResize");
 		var Screen=window.innerWidth/window.innerHeight;
-		 
-		
+		}	
+
 	}  
 	
 	
