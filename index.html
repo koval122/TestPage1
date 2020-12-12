@@ -29,14 +29,12 @@
 
 	}  
 	
-	const canvas = document.getElementById("canvas");
+	const canvas = document.getElementById("unityContainer");
 	
 
 	//Чувствительность — количество пикселей, после которого жест будет считаться свайпом
 	const sensitivity = 20;
 
-	//Получение поля, в котором будут выводиться сообщения
-	const msgBox = document.getElementById("unityContainer");
 
 	var touchStart = null; //Точка начала касания
 	var touchPosition = null; //Текущая позиция
@@ -51,20 +49,15 @@
     //Получаем текущую позицию касания
    		 touchStart = { x: e.changedTouches[0].clientX, y: e.changedTouches[0].clientY };
     		touchPosition = { x: touchStart.x, y: touchStart.y };
-
-	    Draw(touchPosition.x, touchPosition.y, 6, "blue"); //Рисуем точку начала касания
 	}
 
 	function TouchMove(e)
 	{
     		//Получаем новую позицию
    		 touchPosition = { x: e.changedTouches[0].clientX, y: e.changedTouches[0].clientY };
-   		 Draw(touchPosition.x, touchPosition.y, 2); //Рисуем точку текущей позиции
 	}
 	function TouchEnd(e, color)
 	{
-  	  DrawLine(); //Рисуем линию между стартовой и конечной точками
-   	 Draw(touchPosition.x, touchPosition.y, 6, color); //Рисуем конечную точку
 
 	    CheckAction(); //Определяем, какой жест совершил пользователь
 
@@ -95,16 +88,15 @@
    	 {
    		 if(d.y > 0) //Свайп вверх
    		 {
-   			 msg = "Swipe up";
+   			 alert("up");
    		 }
    		 else //Свайп вниз
    		 {
-   			 msg = "Swipe down";
+   			alert("down");
    		 }
    	 }
     }
 
-    msgBox.innerText = msg; //Выводим сообщение
 
 }
 
