@@ -38,7 +38,7 @@
 	var touchPosition = null; //Текущая позиция
 
 	//Перехватываем события
-	canvas.addEventListener("touchstart", function (e) { TouchStart(e); }); //Начало касания
+	
 	canvas.addEventListener("touchmove", function (e) { TouchMove(e); }); //Движение пальцем по экрану
 	//Пользователь отпустил экран
 	canvas.addEventListener("touchend", function (e) { TouchEnd(e, "green"); });
